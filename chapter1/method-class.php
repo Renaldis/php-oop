@@ -8,6 +8,7 @@ class Student{
     {
         return "Hello World";
     }
+
 }
 
 $student1 = new Student;
@@ -19,15 +20,18 @@ $student2->name = 'Luna';
 echo $student1->name . "<br>";
 echo $student2->name . "<br>";
 
-$class = get_class_vars("Student");
+echo $student1->sayHello() . "<br>";
+echo $student2->sayHello() . "<br>";
+
+$methods = get_class_methods("Student");
 echo "<pre>";
-print_r($class);
+print_r($methods);
 echo "</pre>";
 
-if(property_exists('Student','name')){
-    echo "Properti name Tersedia";
+if(method_exists('Student','sayHello')){
+    echo "Method sayHello Tersedia";
 }else{
-    echo "Properti name Tidak Tersedia";
+    echo "Method sayHello Tidak Tersedia";
 }
 
 ?>
