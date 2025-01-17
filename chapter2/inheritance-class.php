@@ -17,7 +17,7 @@ class Customer extends User
 
 }
 
-$c = new Customer();
+$c = new Customer;
 $c->firstName="Customer";
 $c->lastName="Doe";
 
