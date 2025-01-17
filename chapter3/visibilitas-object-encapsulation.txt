@@ -1,0 +1,4 @@
+public - bisa digunakan dimana saja
+protected - hanya bisa digunakan di dalam class dan subclass
+private - hanya bisa digunakan di dalam class itu sendiri
+
