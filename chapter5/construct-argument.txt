@@ -1,0 +1,28 @@
+--example 1
+class Product{
+public $name;
+public $color;
+public function _ construct($name, $color){
+$this->name = $name;
+$this->color = $color;
+}
+}
+$shirt = new Product('T-Shirt', 'Blue');
+echo $shirt->name; // T-Shirt
+echo $shirt->color; // Blue
+
+
+
+--example 2
+class Product{
+public $name;
+public $color;
+public $price;
+public function _ construct($args=[]){
+$this->name = $args['name'] ?? NULL;
+$this->color = $args[color] ?? NULL;
+$this->price = $args['price'] ?? NULL;
+}
+}
+$shirt = new Product (['name' => 'T-Shirt', 'color' => 'Blue', 'price' => '299']);
+echo $shirt->name; // T-Shirt

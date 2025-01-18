@@ -1,0 +1,20 @@
+# Magic Methods
+
+_construct()
+_destruct()
+clone()
+_get(), _set()
+
+https://www.php.net/manual/en/language.oop5.magic.php
+
+
+class Product{
+public $name;
+public $color;
+public function _ construct(){ // harus public
+Logger::log('creating new product');
+$this->color = "blue";
+}
+}
+$shirt = new Product;
+echo $shirt->color; // blue
