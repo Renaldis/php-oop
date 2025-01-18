@@ -1,0 +1,28 @@
+# Autoload Undefined Method
+
+_autoload()
+Dipanggil diluar class / non-class function
+Digunakan untuk mencari class yang tidak ditemukan
+Memberi kesempatan membuat class pada suatu directory
+
+// php v4-5 deprecated warning
+function _autoload($class){
+echo "Class {$class} tidak terdefinisi";
+}
+$cat = new Pet();
+
+// php v7
+function myAutoload($class) {
+echo "Class {$class} tidak terdefinisi";
+}
+spl_autoload_register('myAutoload');
+$cat = new Pet();
+
+
+function myAutoload($class) {
+if(preg_match('/\A\w+\Z/', $class)){
+include 'classes/' $class. '.php';
+}
+}
+spl_autoload_register('myAutoload');
+$cat = new Pet();
