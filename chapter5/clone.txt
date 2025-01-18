@@ -1,0 +1,21 @@
+$shirt1 = new Product;
+$shirt1->color = "blue";
+$shirt2 = clone $shirt1;
+echo $shirt1->color; // blue
+echo $shirt2->color; // blue
+$shirt2->color = "red";
+echo $shirt1->color; // blue
+echo $shirt2->color; // red
+
+class Product{
+public static $instanceCount = 0;
+public function _ construct(){
+self::$instanceCount++;
+}
+public function _destruct(){
+self::$instanceCount--;
+}
+public function _ clone() {
+self::$instanceCount++;
+}
+}
