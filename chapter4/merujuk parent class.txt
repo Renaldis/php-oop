@@ -1,0 +1,34 @@
+
+# Merujuk Parent Class
+
+-ClassName::$property / ClassName::method()
+-self::$property / self::method()
+-parent::$property / parent::method()
+
+# Merujuk Parent Class
+-Hanya bekerja di dalam Class bukan instance
+-self:: dan parent:: menggantikan ClassName
+-Tidak dibutuhkan dalam static properties
+-Berguna pada saat memanggil static method yang telah di-override
+
+
+class Programmer {
+public static function makeSystem(){
+echo "Start coding";
+}
+}
+
+class Amateur Programmer extends Programmer {
+public static function makeSystem(){
+echo "Read documentation";
+parent:: makeSystem();
+echo "Clean up mess.";
+}
+}
+
+Programmer::makeSystem();
+// Start coding
+AmateurProgrammer::makeSystem();
+// Read documentation
+// Start coding
+// Clean up mess
